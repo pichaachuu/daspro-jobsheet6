@@ -13,9 +13,17 @@ public class Pemilihan2Percobaan213 {
         System.out.print("masukkan angka dari menu yang dipilih =");
         int pilihanMenu = input13.nextInt();
         input13.nextLine();
-        System.out.print("Apakah punya member (y/n ? =)");
+        System.out.print("Apakah punya member (y/n) ? =");
         String member = input13.nextLine();
+        System.out.print("Apakah pembayaran melalui QRIS (y/n) ? =");
+        String qris = input13.nextLine();
         System.out.println("-------------------------------------");
+
+        int potonganQris = 0;
+
+        if (qris.equalsIgnoreCase("y")) {
+            potonganQris = 1000;
+        }
 
         if (member.equalsIgnoreCase("y")) {
             double diskon = 0.10;
@@ -40,7 +48,7 @@ public class Pemilihan2Percobaan213 {
                 return;
             }
 
-            double totalBayar = harga - (harga * diskon);
+            double totalBayar = harga - (harga * diskon) - potonganQris;
             System.out.println("Total bayar setelah diskon = " + totalBayar);
         }
     }
